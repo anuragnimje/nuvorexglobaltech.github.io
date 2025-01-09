@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Nuvorex Global Technology</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/futuristic.css"> <!-- New futuristic styles -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+</head>
+<body>
+    <header>
+        <h1>Careers at Nuvorex Global Technology</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Job Openings</h2>
+            <div class="job-listing">
+                <h3>Software Engineer</h3>
+                <p>Join our team to develop innovative software solutions.</p>
+                <button class="apply-btn" onclick="showJobDescription('Software Engineer', 'Full job description here...')">Apply</button>
+            </div>
+            <div class="job-listing">
+                <h3>Product Manager</h3>
+                <p>Lead product development and strategy.</p>
+                <button class="apply-btn" onclick="showJobDescription('Product Manager', 'Full job description here...')">Apply</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Job Description Modal -->
+    <div id="jobModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="jobTitle"></h2>
+            <p id="jobDescription"></p>
+            <button onclick="openApplicationForm()">Apply Now</button>
+        </div>
+    </div>
+
+    <!-- Application Form Modal -->
+    <div id="applicationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeApplicationForm()">&times;</span>
+            <h2>Application Form</h2>
+            <form id="applicationForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="resume">Upload Resume:</label>
+                <input type="file" id="resume" name="resume" required>
+                <button type="submit">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nuvorex Global Technology. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        function showJobDescription(title, description) {
+            document.getElementById('jobTitle').innerText = title;
+            document.getElementById('jobDescription').innerText = description;
+            document.getElementById('jobModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('jobModal').style.display = 'none';
+        }
+
+        function openApplicationForm() {
+            closeModal();
+            document.getElementById('applicationModal').style.display = 'block';
+        }
+
+        function closeApplicationForm() {
+            document.getElementById('applicationModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
